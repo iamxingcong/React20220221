@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 class FrontPage extends React.Component {
+ 
 
     constructor(props) {
         super(props);
