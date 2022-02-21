@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { render } from "react-dom";
+
 import {
   BrowserRouter,
   Routes,
@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 import FrontPage from "./views/FrontPage";
-
+import Detail from "./views/Detail"
 
 import store from './app/store'
 import { Provider } from 'react-redux'
@@ -24,7 +24,8 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="FrontPage" element={<FrontPage />} />
+          <Route path="postlist" element={<FrontPage />} />
+          <Route path="detail" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     </Provider>
