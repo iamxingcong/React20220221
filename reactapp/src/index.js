@@ -14,6 +14,7 @@ import {
 
 import FrontPage from "./views/FrontPage";
 import Detail from "./views/Detail"
+import Counter from "./views/Counter"
 
 import store from './app/store'
 import { Provider } from 'react-redux'
@@ -26,6 +27,7 @@ ReactDOM.render(
           <Route path="/" element={<App />} />
           <Route path="postlist" element={<FrontPage />} />
           <Route path="detail" element={<Detail />} />
+          <Route path="counter" element={<Counter />} />
         </Routes>
       </BrowserRouter>
     </Provider>

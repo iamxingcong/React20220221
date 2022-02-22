@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 
+import counterReducer from './counterSlice'
 
 
 export default configureStore({
   reducer: {
-    data: "09"
+    counter: counterReducer
   },
 })

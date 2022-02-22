@@ -1,16 +1,27 @@
 import React from "react";
 
-class Detail extends React.Component {
+import {
+    useSelector,
+    useDispatch
+} from 'react-redux'
+
+import {
+    decrement,
+    increment
+} from '../app/counterSlice'
+
+export default function Detail() {
 
 
-	 render() {
 
-        return ( 
+    const count = useSelector((state) => state.counter.value)
+    
+    return (
 
-        	<p>  detail </p>
-        )
+        <> 
+            detail <span > {count} </span> 
+        </>
+    )
 
-     }
+
 }
-export default Detail
-
