@@ -3,6 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../app/counterSlice'
 import Detail from  './Detail'
 
+import {
+    Link,
+    BrowserRouter,
+    Route,
+    Switch,
+    StaticRouter,
+    Redirect,
+} from 'react-router-dom';
 
 
 export function Counter() {
@@ -11,10 +19,8 @@ export function Counter() {
 
   function goto() {
     console.log("3232")
-    this.props.history.push({
-            pathname: "Detail",
-           
-         }); 
+   
+    
   }
 
   return (
@@ -38,11 +44,13 @@ export function Counter() {
 
          <button
           aria-label="go to"
-          onClick={goto}
+          onClick={ goto }
         >
           go to 
 
         </button>
+
+         <Link to="/detail"> detail </Link>
       </div>
     </div>
   )
