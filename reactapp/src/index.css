@@ -13,8 +13,10 @@ code {
     monospace;
 }
 
-button, span{
+button, span, a, p{
   float:  left;
   margin-right:  2.5em;
   display:  block;
 }
+
+ 

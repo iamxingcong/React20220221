@@ -1,6 +1,8 @@
+
 import React from 'react'
+import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../app/counterSlice'
+import { listdt, decrement, increment } from '../app/counterSlice'
 import Detail from  './Detail'
 
 import {
@@ -15,11 +17,32 @@ import {
 
 export function Counter() {
   const count = useSelector((state) => state.counter.value)
+  const list = useSelector((state) => state.counter.list)
   const dispatch = useDispatch()
 
-  function goto() {
-    console.log("3232")
+  async function goto() {
+         
    
+        const urlsx = "http://localhost/wordpress/index.php/wp-json/wp/v2/posts";
+
+        var that = this
+        await axios.get(urlsx)
+            .then(function(response) {
+                
+                if (response.data) {
+                    
+                   dispatch(listdt(response.data))
+
+                }
+
+
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+
+
     
   }
 
@@ -29,7 +52,7 @@ export function Counter() {
       <div>
         <button
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(increment(6))}
         >
           Increment
         </button>
@@ -51,6 +74,10 @@ export function Counter() {
         </button>
 
          <Link to="/detail"> detail </Link>
+         <Link to="/postlist"> post list  </Link>
+
+        
+         
       </div>
     </div>
   )

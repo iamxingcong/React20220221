@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+ 
 class FrontPage extends React.Component {
  
 
@@ -33,9 +34,11 @@ class FrontPage extends React.Component {
             .then(function(response) {
               
                 if (response.data) {
+                    
                     that.setState({
 
-                        datalist: response.data,
+                        datalist: response.data
+                        
 
                     })
                 }
