@@ -24,10 +24,10 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="app" element={<App />} />
           <Route path="postlist" element={<FrontPage />} />
           <Route path="detail" element={<Detail />} />
-          <Route path="counter" element={<Counter />} />
+          <Route path="/" element={<Counter />} />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -1,15 +1,10 @@
 import React from "react";
 
 import {
-    useSelector,
-    useDispatch
+    useSelector 
 } from 'react-redux'
 
-import {
-    decrement,
-    increment
-} from '../app/counterSlice'
-
+ 
 export default function Detail() {
 
 
@@ -26,7 +21,10 @@ export default function Detail() {
              {list && list.length >= 1 ? (
                 list.map((item) => {
                     
-                      return  <h1 key={item.id}> {item.id} </h1>
+                      return <>
+                       <h1 key={item.id}> {item.id} </h1>
+                        <p> {item.content.rendered} </p>
+                       </>
                      
                 })
              ) : ("--")}

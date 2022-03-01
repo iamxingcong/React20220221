@@ -6,26 +6,20 @@ import { listdt, decrement, increment } from '../app/counterSlice'
 import Detail from  './Detail'
 
 import {
-    Link,
-    BrowserRouter,
-    Route,
-    Switch,
-    StaticRouter,
-    Redirect,
+    Link
 } from 'react-router-dom';
 
 
 export function Counter() {
   const count = useSelector((state) => state.counter.value)
-  const list = useSelector((state) => state.counter.list)
+ 
   const dispatch = useDispatch()
 
   async function goto() {
          
    
-        const urlsx = "http://localhost/wordpress/index.php/wp-json/wp/v2/posts";
-
-        var that = this
+        const urlsx = "http://localhost/wordpress/wp-json/wp/v2/posts";
+ 
         await axios.get(urlsx)
             .then(function(response) {
                 

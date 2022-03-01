@@ -27,7 +27,7 @@ class FrontPage extends React.Component {
 
         })
 
-        const urlsx = "http://localhost/wordpress/index.php/wp-json/wp/v2/posts";
+        const urlsx = "http://localhost/wordpress/wp-json/wp/v2/posts";
 
         var that = this
         await axios.get(urlsx)
@@ -63,7 +63,7 @@ class FrontPage extends React.Component {
                     return(
                         <div key={item.id}>
                         <p> {item.id} {item.title.rendered} </p>
-                        <a target="_blank" href={item.link}>{item.link}</a>
+                        <a target="_blank"  rel="noreferrer"  href={item.link}>{item.link}</a>
                         </div>
                     )
 
